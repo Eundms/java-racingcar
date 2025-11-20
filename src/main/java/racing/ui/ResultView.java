@@ -1,7 +1,6 @@
 package racing.ui;
 
-import java.util.List;
-import java.util.StringJoiner;
+import racing.domain.Winners;
 import racing.dto.RacingResult;
 
 public class ResultView {
@@ -13,11 +12,7 @@ public class ResultView {
     System.out.println(racingResult.getCurrentStatus());
   }
 
-  public static void printWinners(List<String> winners) {
-    StringJoiner joiner = new StringJoiner(",");
-    for (String x : winners) {
-      joiner.add(x);
-    }
-    System.out.println(joiner + "가 최종 우승했습니다.");
+  public static void printWinners(Winners winners) {
+    System.out.println(winners + "가 최종 우승했습니다.");
   }
 }

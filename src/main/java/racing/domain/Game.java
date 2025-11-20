@@ -35,8 +35,8 @@ public class Game {
     return new RacingResult(this.roundCount, this.participants);
   }
 
-  public List<String> getWinners() {
-    return participants.getWinnerNames();
+  public Winners getWinners() {
+    return participants.getWinners();
   }
 
   public boolean canRace() {

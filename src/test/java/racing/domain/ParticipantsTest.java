@@ -22,8 +22,8 @@ class ParticipantsTest {
     MovementStrategy noMoveStrategy = new MovementStrategy(0, 0);
     participants.play(noMoveStrategy);
 
-    List<String> winners = participants.getWinnerNames();
-    assertThat(winners).containsExactlyInAnyOrder("a", "b", "c");
+    Winners winners = participants.getWinners();
+    assertThat(winners.toString()).isEqualTo("a,b,c");
   }
 
   @Test
@@ -36,8 +36,8 @@ class ParticipantsTest {
     );
     Participants customParticipants = new Participants(cars);
 
-    List<String> winners = customParticipants.getWinnerNames();
-    assertThat(winners).containsExactly("a");
+    Winners winners = customParticipants.getWinners();
+    assertThat(winners.toString()).isEqualTo("a");
   }
 
   @Test
@@ -50,8 +50,8 @@ class ParticipantsTest {
     );
     Participants customParticipants = new Participants(cars);
 
-    List<String> winners = customParticipants.getWinnerNames();
-    assertThat(winners).containsExactlyInAnyOrder("a", "b");
+    Winners winners = customParticipants.getWinners();
+    assertThat(winners.toString()).isEqualTo("a,b");
   }
 
   @Test

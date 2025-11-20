@@ -19,7 +19,7 @@ public class Participants {
     this(Cars.from(names));
   }
 
-  public List<String> getWinnerNames() {
+  public Winners getWinners() {
     return findWinners(findMaxPositionCar());
   }
 
@@ -38,14 +38,14 @@ public class Participants {
     return str;
   }
 
-  private List<String> findWinners(Car maxPositionCar) {
-    List<String> winners = new ArrayList<>();
+  private Winners findWinners(Car maxPositionCar) {
+    List<Car> winners = new ArrayList<>();
     for (Car car : cars) {
       if (car.hasSamePosition(maxPositionCar)) {
-        winners.add(car.getName());
+        winners.add(car);
       }
     }
-    return winners;
+    return new Winners(winners);
   }
 
   private Car findMaxPositionCar() {
